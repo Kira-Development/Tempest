@@ -11,6 +11,8 @@ import me.funky.hub.manager.BuildManager;
 import me.funky.hub.manager.LobbyManager;
 import me.funky.hub.utils.CC;
 import me.funky.hub.utils.YamlDoc;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
@@ -42,8 +44,12 @@ public class Tempest extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        for(Player player : Bukkit.getOnlinePlayers()) {
+            player.kickPlayer(CC.translate(getMessagesYML().getConfig().getString("DISABLE")));
+        }
+        instance = null;
     }
+
     public void getManagers() {
         this.paperCommandManager = new PaperCommandManager(this);
         this.buildManager = new BuildManager();

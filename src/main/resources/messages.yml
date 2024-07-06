@@ -36,3 +36,5 @@ ANTI-VOID:
 DAMAGE:
   ENABLED: true
   MESSAGE: "&cYou can't hit other players!"
+
+DISABLE: "&cThe Hub has gone down!"
