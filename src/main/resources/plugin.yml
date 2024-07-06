@@ -1,0 +1,6 @@
+name: Tempest
+version: '${project.version}'
+main: me.funky.hub.Tempest
+authors:
+  - funkyranveer
+  - Kira Development
