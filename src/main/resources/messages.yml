@@ -28,3 +28,11 @@ JOIN:
   ANNOUNCE:
     ENABLED: true
     MESSAGE: "&8[&a+&8]&r <player> &fhas joined the server!"
+
+ANTI-VOID:
+  ENABLED: true
+  MESSAGE: "&cYou have been sent back to spawn!"
+
+DAMAGE:
+  ENABLED: true
+  MESSAGE: "&cYou can't hit other players!"

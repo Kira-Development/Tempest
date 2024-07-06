@@ -84,6 +84,7 @@
       <version>1.18.26</version>
       <scope>provided</scope>
     </dependency>
+    <!-- ACF Command API -->
     <dependency>
       <groupId>co.aikar</groupId>
       <artifactId>acf-paper</artifactId>

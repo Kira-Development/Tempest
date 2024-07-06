@@ -22,7 +22,11 @@ JOIN-SOUND:
 WORLD:
   WEATHER: false
   MOBS: false
+  DAMAGE: false
   BLOCKS:
     PLACE: false
     BREAK: false
 
+ANTI-VOID:
+  ENABLED: true
+  LIMIT: 0

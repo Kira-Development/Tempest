@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 import me.funky.hub.command.TempestCommand;
 import me.funky.hub.listener.JoinListener;
+import me.funky.hub.listener.PlayerListener;
 import me.funky.hub.listener.WorldListener;
 import me.funky.hub.manager.BuildManager;
 import me.funky.hub.manager.LobbyManager;
@@ -60,7 +61,8 @@ public class Tempest extends JavaPlugin {
     public void getListeners() {
         Arrays.asList(
                 new WorldListener(),
-                new JoinListener()
+                new JoinListener(),
+                new PlayerListener()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
     }
 }
