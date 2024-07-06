@@ -15,9 +15,14 @@ Spawn:
   Pitch: 0
   Yaw: 0
 
+JOIN-SOUND:
+  ENABLED: true
+  SOUND: "CAT_MEOW"
+
 WORLD:
   WEATHER: false
   MOBS: false
   BLOCKS:
     PLACE: false
     BREAK: false
+
