@@ -4,8 +4,10 @@ import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import me.funky.hub.command.TempestCommand;
+import me.funky.hub.listener.JoinListener;
 import me.funky.hub.listener.WorldListener;
 import me.funky.hub.manager.BuildManager;
+import me.funky.hub.manager.LobbyManager;
 import me.funky.hub.utils.CC;
 import me.funky.hub.utils.YamlDoc;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +22,7 @@ public class Tempest extends JavaPlugin {
     private static Tempest instance;
     private PaperCommandManager paperCommandManager;
     private BuildManager buildManager;
+    private LobbyManager lobbyManager;
     private YamlDoc messagesYML;
 
     @SneakyThrows
@@ -43,6 +46,7 @@ public class Tempest extends JavaPlugin {
     public void getManagers() {
         this.paperCommandManager = new PaperCommandManager(this);
         this.buildManager = new BuildManager();
+        this.lobbyManager = new LobbyManager();
     }
     public void getCommands() {
         Arrays.asList(
@@ -55,7 +59,8 @@ public class Tempest extends JavaPlugin {
     }
     public void getListeners() {
         Arrays.asList(
-                new WorldListener()
+                new WorldListener(),
+                new JoinListener()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
     }
 }

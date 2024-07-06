@@ -14,3 +14,17 @@ BLOCKS:
   BREAK:
     ENABLED: true
     MESSAGE: "&cYou can't break blocks!"
+
+JOIN:
+  CLEAR-CHAT: true
+  MOTD:
+    ENABLED: true
+    LINES:
+      - ""
+      - "&fWelcome to &eTempest Hub Core!"
+      - ""
+      - "&fDiscord:&e https://discord.gg/jtPFMbsEcw"
+      - ""
+  ANNOUNCE:
+    ENABLED: true
+    MESSAGE: "&8[&a+&8]&r <player> &fhas joined the server!"
