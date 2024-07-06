@@ -1,0 +1,8 @@
+# Tempest Hub Core Message Configuration
+
+RELOAD: "&aTempest has been successfully reloaded."
+SETSPAWN: "&aYou have set the lobby location."
+
+BUILDMODE:
+  ENABLED: "&aYou have enabled buildmode."
+  DISABLED: "&cYou have disabled buildmode."
