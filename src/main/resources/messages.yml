@@ -6,3 +6,11 @@ SETSPAWN: "&aYou have set the lobby location."
 BUILDMODE:
   ENABLED: "&aYou have enabled buildmode."
   DISABLED: "&cYou have disabled buildmode."
+
+BLOCKS:
+  PLACE:
+    ENABLED: true
+    MESSAGE: "&cYou can't place blocks!"
+  BREAK:
+    ENABLED: true
+    MESSAGE: "&cYou can't break blocks!"

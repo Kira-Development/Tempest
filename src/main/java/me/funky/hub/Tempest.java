@@ -4,6 +4,7 @@ import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import me.funky.hub.command.TempestCommand;
+import me.funky.hub.listener.WorldListener;
 import me.funky.hub.manager.BuildManager;
 import me.funky.hub.utils.CC;
 import me.funky.hub.utils.YamlDoc;
@@ -28,6 +29,7 @@ public class Tempest extends JavaPlugin {
         saveDefaultConfig();
         getConfigs();
         getManagers();
+        getListeners();
         getCommands();
 
         CC.pluginEnabled();
@@ -50,5 +52,10 @@ public class Tempest extends JavaPlugin {
     public void getConfigs() throws IOException {
         messagesYML = new YamlDoc(getDataFolder(), "messages.yml");
         messagesYML.init();
+    }
+    public void getListeners() {
+        Arrays.asList(
+                new WorldListener()
+        ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
     }
 }

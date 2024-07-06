@@ -14,3 +14,10 @@ Spawn:
   Z: 0
   Pitch: 0
   Yaw: 0
+
+WORLD:
+  WEATHER: false
+  MOBS: false
+  BLOCKS:
+    PLACE: false
+    BREAK: false
