@@ -1,6 +1,7 @@
 name: Tempest
 version: '${project.version}'
 main: me.funky.hub.Tempest
+website: https://discord.gg/jtPFMbsEcw
 authors:
   - funkyranveer
   - Kira Development

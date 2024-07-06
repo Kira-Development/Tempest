@@ -1,12 +1,20 @@
 package me.funky.hub;
 
+import lombok.Getter;
+import me.funky.hub.utils.CC;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Tempest extends JavaPlugin {
+@Getter
+public class Tempest extends JavaPlugin {
+
+    @Getter
+    private static Tempest instance;
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        instance = this;
+        saveDefaultConfig();
+        CC.pluginEnabled();
 
     }
 
