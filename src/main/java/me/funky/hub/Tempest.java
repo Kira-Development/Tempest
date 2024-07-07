@@ -15,6 +15,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -27,6 +28,8 @@ public class Tempest extends JavaPlugin {
     private BuildManager buildManager;
     private LobbyManager lobbyManager;
     private YamlDoc messagesYML;
+    private YamlDoc scoreboardYML;
+    private YamlDoc tablistYML;
 
     @SneakyThrows
     @Override
@@ -61,8 +64,20 @@ public class Tempest extends JavaPlugin {
         ).forEach(command -> paperCommandManager.registerCommand(command));
     }
     public void getConfigs() throws IOException {
+        if (!getDataFolder().exists()) {
+            getDataFolder().mkdir();
+        }
+        File providerFolder = new File(getDataFolder(), "providers");
+        if (!providerFolder.exists()) {
+            providerFolder.mkdirs();
+        }
+
         messagesYML = new YamlDoc(getDataFolder(), "messages.yml");
         messagesYML.init();
+        scoreboardYML = new YamlDoc(providerFolder, "scoreboard.yml");
+        scoreboardYML.init();
+        tablistYML = new YamlDoc(providerFolder, "tablist.yml");
+        tablistYML.init();
     }
     public void getListeners() {
         Arrays.asList(
