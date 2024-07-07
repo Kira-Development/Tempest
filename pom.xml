@@ -66,6 +66,10 @@
       <id>aikar</id>
       <url>https://repo.aikar.co/content/groups/aikar/</url>
     </repository>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -89,6 +93,22 @@
       <groupId>co.aikar</groupId>
       <artifactId>acf-paper</artifactId>
       <version>0.5.1-SNAPSHOT</version>
+    </dependency>
+    <!-- Tablist API -->
+    <dependency>
+      <groupId>com.github.NoSequel.TabAPI</groupId>
+      <artifactId>shared</artifactId>
+      <version>a086154966</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.NoSequel.TabAPI</groupId>
+      <artifactId>v1_7_R4</artifactId>
+      <version>a086154966</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.NoSequel.TabAPI</groupId>
+      <artifactId>v1_8_R3</artifactId>
+      <version>a086154966</version>
     </dependency>
   </dependencies>
 </project>
