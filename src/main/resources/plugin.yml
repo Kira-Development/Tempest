@@ -5,3 +5,5 @@ website: https://discord.gg/jtPFMbsEcw
 authors:
   - funkyranveer
   - Kira Development
+softdepend:
+  - PlaceholderAPI

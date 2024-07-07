@@ -70,6 +70,10 @@
       <id>jitpack.io</id>
       <url>https://jitpack.io</url>
     </repository>
+    <repository>
+      <id>placeholderapi</id>
+      <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -109,6 +113,13 @@
       <groupId>com.github.NoSequel.TabAPI</groupId>
       <artifactId>v1_8_R3</artifactId>
       <version>a086154966</version>
+    </dependency>
+    <!-- PlaceholderAPI -->
+    <dependency>
+      <groupId>me.clip</groupId>
+      <artifactId>placeholderapi</artifactId>
+      <version>2.10.9</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>
