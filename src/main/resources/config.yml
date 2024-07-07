@@ -19,6 +19,10 @@ JOIN-SOUND:
   ENABLED: true
   SOUND: "CAT_MEOW"
 
+JOIN-SPEED:
+  ENABLED: true
+  VALUE: 4
+
 WORLD:
   WEATHER: false
   MOBS: false

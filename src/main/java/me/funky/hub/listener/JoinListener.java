@@ -7,7 +7,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class JoinListener implements Listener {
 
@@ -19,6 +20,9 @@ public class JoinListener implements Listener {
 
         if(Tempest.getInstance().getConfig().getBoolean("JOIN-SOUND.ENABLED")) {
             player.playSound(player.getLocation(), Sound.valueOf(Tempest.getInstance().getConfig().getString("JOIN-SOUND.SOUND").toUpperCase()), 1.0F, 1.0F);
+        }
+        if(Tempest.getInstance().getConfig().getBoolean("JOIN-SPEED.ENABLED")) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE,Tempest.getInstance().getConfig().getInt("JOIN-SPEED.VALUE")));
         }
         if(Tempest.getInstance().getMessagesYML().getConfig().getBoolean("JOIN.CLEAR-CHAT")) {
             for(int i = 0; i < 1000; i++) {
