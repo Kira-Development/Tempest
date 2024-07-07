@@ -8,6 +8,9 @@
 # Anti-Leak Protection
 LICENSE: ""
 
+PROVIDERS:
+  SCOREBOARD: true
+
 Spawn:
   X: 0
   Y: 100

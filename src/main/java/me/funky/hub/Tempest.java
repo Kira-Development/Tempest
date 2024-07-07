@@ -1,6 +1,8 @@
 package me.funky.hub;
 
 import co.aikar.commands.PaperCommandManager;
+import io.github.thatkawaiisam.assemble.Assemble;
+import io.github.thatkawaiisam.assemble.AssembleStyle;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import me.funky.hub.command.TempestCommand;
@@ -9,6 +11,7 @@ import me.funky.hub.listener.PlayerListener;
 import me.funky.hub.listener.WorldListener;
 import me.funky.hub.manager.BuildManager;
 import me.funky.hub.manager.LobbyManager;
+import me.funky.hub.provider.BoardProvider;
 import me.funky.hub.utils.CC;
 import me.funky.hub.utils.YamlDoc;
 import org.bukkit.Bukkit;
@@ -40,6 +43,7 @@ public class Tempest extends JavaPlugin {
         getManagers();
         getListeners();
         getCommands();
+        getScoreboard();
 
         CC.pluginEnabled();
 
@@ -85,5 +89,16 @@ public class Tempest extends JavaPlugin {
                 new JoinListener(),
                 new PlayerListener()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
+    }
+    public void getScoreboard() {
+        if(getConfig().getBoolean("PROVIDERS.SCOREBOARD")) {
+            Assemble assemble = new Assemble(this, new BoardProvider());
+            assemble.setTicks(2);
+            assemble.setAssembleStyle(AssembleStyle.MODERN);
+            BoardProvider.create();
+            Bukkit.getConsoleSender().sendMessage(CC.translate("&e[Tempest] &aScoreboard is enabled"));
+        } else {
+            Bukkit.getConsoleSender().sendMessage(CC.translate("&e[Tempest] &cScoreboard is disabled"));
+        }
     }
 }

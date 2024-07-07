@@ -1,0 +1,24 @@
+# For best scoreboard experience, make sure to have:
+# PlaceholderAPI and then run: /papi ecloud download bungee
+
+SCOREBOARD:
+  UPDATE-DELAY: 0.1
+  TITLE:
+    - "&f&lTempest"
+    - "&e&lT&f&lempest"
+    - "&e&lTe&f&lmpest"
+    - "&e&lTem&f&lpest"
+    - "&e&lTemp&f&lest"
+    - "&e&lTempe&f&lst"
+    - "&e&lTempes&f&lt"
+    - "&e&lTempest"
+    - "&f&lTempest"
+    - "&e&lTempest"
+  LINES:
+    DEFAULT:
+      - "&7&m-----------------"
+      - "&e&lOnline: "
+      - "&r &d%bungee_total%"
+      - ""
+      - "&7&o@KiraDev"
+      - "&7&m-----------------"
