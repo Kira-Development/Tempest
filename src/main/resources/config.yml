@@ -37,3 +37,15 @@ WORLD:
 ANTI-VOID:
   ENABLED: true
   LIMIT: 0
+
+BLOCKED-COMMANDS:
+  ENABLED: true
+  NO-PERMISSION: "&cYou don't have permission to do this command!"
+  LIST:
+    - pl
+    - plugins
+    - ver
+    - version
+    - about
+    - icanhasbukkit
+    - bukkit:?

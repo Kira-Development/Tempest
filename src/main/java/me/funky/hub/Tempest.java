@@ -6,6 +6,7 @@ import io.github.thatkawaiisam.assemble.AssembleStyle;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import me.funky.hub.command.TempestCommand;
+import me.funky.hub.listener.CommandListener;
 import me.funky.hub.listener.JoinListener;
 import me.funky.hub.listener.PlayerListener;
 import me.funky.hub.listener.WorldListener;
@@ -103,7 +104,8 @@ public class Tempest extends JavaPlugin {
                 new WorldListener(),
                 new JoinListener(),
                 new PlayerListener(),
-                new ButtonListener()
+                new ButtonListener(),
+                new CommandListener()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
     }
     public void getScoreboard() {
