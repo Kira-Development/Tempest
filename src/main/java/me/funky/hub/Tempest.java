@@ -19,7 +19,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -73,27 +72,16 @@ public class Tempest extends JavaPlugin {
         ).forEach(command -> paperCommandManager.registerCommand(command));
     }
     public void getConfigs() throws IOException {
-        if (!getDataFolder().exists()) {
-            getDataFolder().mkdir();
-        }
-        File providerFolder = new File(getDataFolder(), "providers");
-        if (!providerFolder.exists()) {
-            providerFolder.mkdirs();
-        }
-        File selectorsFolder = new File(getDataFolder(), "selectors");
-        if (!providerFolder.exists()) {
-            providerFolder.mkdirs();
-        }
 
         messagesYML = new YamlDoc(getDataFolder(), "messages.yml");
         messagesYML.init();
-        scoreboardYML = new YamlDoc(providerFolder, "scoreboard.yml");
+        scoreboardYML = new YamlDoc(getDataFolder(), "scoreboard.yml");
         scoreboardYML.init();
-        tablistYML = new YamlDoc(providerFolder, "tablist.yml");
+        tablistYML = new YamlDoc(getDataFolder(), "tablist.yml");
         tablistYML.init();
-        selectorYML = new YamlDoc(selectorsFolder, "server-selector.yml");
+        selectorYML = new YamlDoc(getDataFolder(), "server-selector.yml");
         selectorYML.init();
-        subselectorYML = new YamlDoc(selectorsFolder, "sub-selector.yml");
+        subselectorYML = new YamlDoc(getDataFolder(), "sub-selector.yml");
         subselectorYML.init();
         hotbarYML = new YamlDoc(getDataFolder(), "hotbar.yml");
         hotbarYML.init();
