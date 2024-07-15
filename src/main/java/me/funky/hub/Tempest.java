@@ -36,6 +36,8 @@ public class Tempest extends JavaPlugin {
     private YamlDoc messagesYML;
     private YamlDoc scoreboardYML;
     private YamlDoc tablistYML;
+    private YamlDoc selectorYML;
+    private YamlDoc subselectorYML;
 
     @SneakyThrows
     @Override
@@ -79,6 +81,10 @@ public class Tempest extends JavaPlugin {
         if (!providerFolder.exists()) {
             providerFolder.mkdirs();
         }
+        File selectorsFolder = new File(getDataFolder(), "selectors");
+        if (!providerFolder.exists()) {
+            providerFolder.mkdirs();
+        }
 
         messagesYML = new YamlDoc(getDataFolder(), "messages.yml");
         messagesYML.init();
@@ -86,6 +92,11 @@ public class Tempest extends JavaPlugin {
         scoreboardYML.init();
         tablistYML = new YamlDoc(providerFolder, "tablist.yml");
         tablistYML.init();
+        selectorYML = new YamlDoc(selectorsFolder, "server-selector.yml");
+        selectorYML.init();
+        subselectorYML = new YamlDoc(selectorsFolder, "sub-selector.yml");
+        subselectorYML.init();
+
     }
     public void getListeners() {
         Arrays.asList(
