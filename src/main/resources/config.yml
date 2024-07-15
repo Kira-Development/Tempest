@@ -29,7 +29,6 @@ JOIN-SPEED:
 WORLD:
   WEATHER: false
   MOBS: false
-  DAMAGE: false
   BLOCKS:
     PLACE: false
     BREAK: false

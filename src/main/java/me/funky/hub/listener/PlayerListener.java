@@ -28,12 +28,6 @@ public class PlayerListener implements Listener {
     @EventHandler
     public void onDamage(EntityDamageEvent event) {
         Player player = (Player) event.getEntity();
-        if(!Tempest.getInstance().getConfig().getBoolean("WORLD.DAMAGE")) {
-            return;
-        }
         event.setCancelled(true);
-        if(Tempest.getInstance().getMessagesYML().getConfig().getBoolean("DAMAGE.ENABLED")) {
-            player.sendMessage(CC.translate(Tempest.getInstance().getMessagesYML().getConfig().getString("DAMAGE.MESSAGE")));
-        }
     }
 }
