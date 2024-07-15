@@ -6,10 +6,7 @@ import io.github.thatkawaiisam.assemble.AssembleStyle;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import me.funky.hub.command.TempestCommand;
-import me.funky.hub.listener.CommandListener;
-import me.funky.hub.listener.JoinListener;
-import me.funky.hub.listener.PlayerListener;
-import me.funky.hub.listener.WorldListener;
+import me.funky.hub.listener.*;
 import me.funky.hub.manager.BuildManager;
 import me.funky.hub.manager.LobbyManager;
 import me.funky.hub.provider.BoardProvider;
@@ -39,6 +36,7 @@ public class Tempest extends JavaPlugin {
     private YamlDoc tablistYML;
     private YamlDoc selectorYML;
     private YamlDoc subselectorYML;
+    private YamlDoc hotbarYML;
 
     @SneakyThrows
     @Override
@@ -97,6 +95,8 @@ public class Tempest extends JavaPlugin {
         selectorYML.init();
         subselectorYML = new YamlDoc(selectorsFolder, "sub-selector.yml");
         subselectorYML.init();
+        hotbarYML = new YamlDoc(getDataFolder(), "hotbar.yml");
+        hotbarYML.init();
 
     }
     public void getListeners() {
@@ -105,7 +105,8 @@ public class Tempest extends JavaPlugin {
                 new JoinListener(),
                 new PlayerListener(),
                 new ButtonListener(),
-                new CommandListener()
+                new CommandListener(),
+                new ItemListener()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
     }
     public void getScoreboard() {

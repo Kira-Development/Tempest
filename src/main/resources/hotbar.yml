@@ -1,0 +1,8 @@
+SERVER-SELECTOR:
+  ENABLED: true
+  NAME: "&e&lServer Selector &7(Right-Click)"
+  MATERIAL: WATCH
+  DATA: 0
+  SLOT: 4
+  LORE:
+    - "&7Right click to navigate servers"
