@@ -1,0 +1,32 @@
+SUB-SELECTOR:
+  TITLE: "%server% subselector"
+  ROWS: 3
+
+  PRACTICE:
+    PRACTICE-NA:
+      NAME: "&a&lPractice-AU"
+      ITEM: "POTION"
+      DATA: 0
+      SLOT: 12
+      LORE:
+        - "&ePlayers: &f%bungee_PracticeAU%/500"
+        - " "
+        - "&7» &eClick to join the queue! &7«"
+      SERVER: "Teams"
+      COMMAND:
+        ENABLED: false
+        COMMAND: ""
+
+    PRACTICE-SA:
+      NAME: "&a&lPractice-AS"
+      ITEM: "POTION"
+      DATA: 0
+      SLOT: 13
+      LORE:
+        - "&ePlayers: &f%bungee_PracticeAS%/500"
+        - " "
+        - "&7» &eClick to join the queue! &7«"
+      SERVER: "Teams"
+      COMMAND:
+        ENABLED: false
+        COMMAND: ""

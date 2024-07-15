@@ -1,0 +1,46 @@
+SERVER-SELECTOR:
+  TITLE: "&7Selector"
+  ROWS: 3
+  ITEMS:
+    HCF:
+      NAME: "&a&lHCF"
+      ITEM: "DIAMOND_SWORD"
+      DATA: 0
+      SLOT: 11
+      LORE:
+        - "&ePlayers: &f%bungee_Squads%/500"
+        - " "
+        - "&7» &eClick to join the queue! &7«"
+      SUB-SERVER: false
+      SERVER: "HCF"
+      COMMAND:
+        ENABLED: false
+        COMMAND: ""
+
+    KITMAP:
+      NAME: "&a&lKitmap"
+      ITEM: "IRON_SWORD"
+      DATA: 0
+      SLOT: 13
+      LORE:
+        - "&ePlayers: &f%bungee_Kitmap%/500"
+        - " "
+        - "&7» &eClick to join the queue! &7«"
+      SUB-SERVER: false
+      SERVER: "Kitmap"
+      COMMAND:
+        ENABLED: false
+        COMMAND: ""
+
+    PRACTICE:
+      NAME: "&a&lPractice"
+      ITEM: "BOW"
+      DATA: 0
+      SLOT: 15
+      LORE:
+        - "&7Click to view practice queues"
+      SUB-SERVER: true
+      SERVER: "Practice"
+      COMMAND:
+        ENABLED: false
+        COMMAND: ""
