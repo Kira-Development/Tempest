@@ -14,10 +14,12 @@ import me.funky.hub.manager.LobbyManager;
 import me.funky.hub.provider.BoardProvider;
 import me.funky.hub.utils.CC;
 import me.funky.hub.utils.YamlDoc;
+import me.funky.hub.utils.bungee.BungeeUtils;
 import me.funky.hub.utils.menu.ButtonListener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +47,7 @@ public class Tempest extends JavaPlugin {
         getListeners();
         getCommands();
         getScoreboard();
+        getBungee();
 
         CC.pluginEnabled();
 
@@ -102,5 +105,17 @@ public class Tempest extends JavaPlugin {
         } else {
             Bukkit.getConsoleSender().sendMessage(CC.translate("&e[Tempest] &cScoreboard is disabled"));
         }
+    }
+    public void getBungee() {
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                BungeeUtils.refreshGlobalCount();
+                BungeeUtils.refreshServerList();
+                BungeeUtils.refreshServerCount();
+            }
+        }.runTaskTimerAsynchronously(this, 10L, 10L);
+        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+        getServer().getMessenger().registerIncomingPluginChannel(this, "BungeeCord", new BungeeUtils());
     }
 }
