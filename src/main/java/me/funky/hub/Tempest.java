@@ -14,6 +14,7 @@ import me.funky.hub.manager.LobbyManager;
 import me.funky.hub.provider.BoardProvider;
 import me.funky.hub.utils.CC;
 import me.funky.hub.utils.YamlDoc;
+import me.funky.hub.utils.menu.ButtonListener;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -87,7 +88,8 @@ public class Tempest extends JavaPlugin {
         Arrays.asList(
                 new WorldListener(),
                 new JoinListener(),
-                new PlayerListener()
+                new PlayerListener(),
+                new ButtonListener()
         ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
     }
     public void getScoreboard() {
